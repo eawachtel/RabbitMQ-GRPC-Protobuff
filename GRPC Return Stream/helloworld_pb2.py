@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='helloworld',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x10helloworld.proto\x12\nhelloworld\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\x05\x32K\n\x07Greeter\x12@\n\x08SayHello\x12\x18.helloworld.HelloRequest\x1a\x16.helloworld.HelloReply\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x10helloworld.proto\x12\nhelloworld\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\"\n\nHelloReply\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x32K\n\x07Greeter\x12@\n\x08SayHello\x12\x18.helloworld.HelloRequest\x1a\x16.helloworld.HelloReply\"\x00\x30\x01\x62\x06proto3')
 )
 
 
@@ -65,8 +65,15 @@ _HELLOREPLY = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='message', full_name='helloworld.HelloReply.message', index=0,
+      name='x', full_name='helloworld.HelloReply.x', index=0,
       number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='y', full_name='helloworld.HelloReply.y', index=1,
+      number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -84,7 +91,7 @@ _HELLOREPLY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=62,
-  serialized_end=91,
+  serialized_end=96,
 )
 
 DESCRIPTOR.message_types_by_name['HelloRequest'] = _HELLOREQUEST
@@ -113,8 +120,8 @@ _GREETER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=93,
-  serialized_end=168,
+  serialized_start=98,
+  serialized_end=173,
   methods=[
   _descriptor.MethodDescriptor(
     name='SayHello',

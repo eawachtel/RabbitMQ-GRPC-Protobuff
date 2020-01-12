@@ -31,7 +31,7 @@ class RpcClient(object):
     def say_hi(self):
         response = self.stub.SayHello(helloworld_pb2.HelloRequest(name='you'))
         for r in response:
-            print(r.message)
+            print(r.x, r.y)
         # print(response.message)
         return response
 

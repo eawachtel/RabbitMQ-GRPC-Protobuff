@@ -29,5 +29,6 @@ message HelloRequest {
 
 // The response message containing the greetings
 message HelloReply {
-  int32 message = 1;
+  int32 x = 1;
+  int32 y = 2;
 }
