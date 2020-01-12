@@ -29,7 +29,7 @@ class Greeter(helloworld_pb2_grpc.GreeterServicer):
         self.numberlist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
     def SayHello(self, request, context):
-        if request is True:
+        while True:
             if len(self.numberlist) > 1:
                 x = 5
                 y = 1
