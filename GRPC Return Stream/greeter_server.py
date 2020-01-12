@@ -15,6 +15,8 @@
 
 from collections import deque
 from concurrent import futures
+from random import seed
+from random import randint
 import logging
 
 import grpc
@@ -26,17 +28,18 @@ import helloworld_pb2_grpc
 class Greeter(helloworld_pb2_grpc.GreeterServicer):
 
     def __init__(self):
-        self.numberlist = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        # seed random number generator
+        seed(1)
 
     def SayHello(self, request, context):
-        while True:
-            if len(self.numberlist) > 1:
-                x = 5
-                y = 1
-            else:
-                number = 0
+        x = 0
+        while request.name == 'true':
+            y = randint(1, 10)
+            if x < 10:
+                x = x + 1
+            if x == 10:
+                x = 0
             yield helloworld_pb2.HelloReply(x=x, y=y)
-
 
     def serve():
         server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))

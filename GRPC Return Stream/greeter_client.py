@@ -29,7 +29,7 @@ class RpcClient(object):
         self.stub = helloworld_pb2_grpc.GreeterStub(self.channel)
 
     def say_hi(self):
-        response = self.stub.SayHello(helloworld_pb2.HelloRequest(name='you'))
+        response = self.stub.SayHello(helloworld_pb2.HelloRequest(name='true'))
         for r in response:
             print(r.x, r.y)
         # print(response.message)
