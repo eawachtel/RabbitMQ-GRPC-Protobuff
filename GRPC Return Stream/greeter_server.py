@@ -18,7 +18,7 @@ from concurrent import futures
 from random import seed
 from random import randint
 import logging
-
+import time
 import grpc
 
 import helloworld_pb2
@@ -34,12 +34,13 @@ class Greeter(helloworld_pb2_grpc.GreeterServicer):
     def requestData(self, request, context):
         x = 0
         while request.name == 'true':
+            time.sleep(.2)
             y = randint(1, 10)
-            if x < 10:
+            if x < 1000:
                 x = x + 1
-            if x == 10:
+            if x == 1000:
                 x = 0
-            yield helloworld_pb2.HelloReply(x=x, y=y)
+            yield helloworld_pb2.numberReply(x=x, y=y)
 
     def serve():
         server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))

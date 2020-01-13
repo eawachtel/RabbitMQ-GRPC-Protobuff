@@ -14,12 +14,12 @@
 
 syntax = "proto3";
 
-package helloworld;
+package streamPOC;
 
 // The greeting service definition.
 service Greeter {
   
-  rpc requestData (streamRequest) returns (stream HelloReply) {}
+  rpc requestData (streamRequest) returns (stream numberReply) {}
 }
 
 // The request message containing the user's name.
@@ -28,7 +28,7 @@ message streamRequest {
 }
 
 // The response message containing the greetings
-message HelloReply {
+message numberReply {
   int32 x = 1;
   int32 y = 2;
 }

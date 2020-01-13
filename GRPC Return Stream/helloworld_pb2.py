@@ -17,10 +17,10 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='helloworld.proto',
-  package='helloworld',
+  package='streamPOC',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x10helloworld.proto\x12\nhelloworld\"\x1d\n\rstreamRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\"\n\nHelloReply\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x32O\n\x07Greeter\x12\x44\n\x0brequestData\x12\x19.helloworld.streamRequest\x1a\x16.helloworld.HelloReply\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x10helloworld.proto\x12\tstreamPOC\"\x1d\n\rstreamRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"#\n\x0bnumberReply\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x32N\n\x07Greeter\x12\x43\n\x0brequestData\x12\x18.streamPOC.streamRequest\x1a\x16.streamPOC.numberReply\"\x00\x30\x01\x62\x06proto3')
 )
 
 
@@ -28,13 +28,13 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _STREAMREQUEST = _descriptor.Descriptor(
   name='streamRequest',
-  full_name='helloworld.streamRequest',
+  full_name='streamPOC.streamRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='helloworld.streamRequest.name', index=0,
+      name='name', full_name='streamPOC.streamRequest.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -52,27 +52,27 @@ _STREAMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=32,
-  serialized_end=61,
+  serialized_start=31,
+  serialized_end=60,
 )
 
 
-_HELLOREPLY = _descriptor.Descriptor(
-  name='HelloReply',
-  full_name='helloworld.HelloReply',
+_NUMBERREPLY = _descriptor.Descriptor(
+  name='numberReply',
+  full_name='streamPOC.numberReply',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='x', full_name='helloworld.HelloReply.x', index=0,
+      name='x', full_name='streamPOC.numberReply.x', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='y', full_name='helloworld.HelloReply.y', index=1,
+      name='y', full_name='streamPOC.numberReply.y', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -90,46 +90,46 @@ _HELLOREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=63,
+  serialized_start=62,
   serialized_end=97,
 )
 
 DESCRIPTOR.message_types_by_name['streamRequest'] = _STREAMREQUEST
-DESCRIPTOR.message_types_by_name['HelloReply'] = _HELLOREPLY
+DESCRIPTOR.message_types_by_name['numberReply'] = _NUMBERREPLY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 streamRequest = _reflection.GeneratedProtocolMessageType('streamRequest', (_message.Message,), {
   'DESCRIPTOR' : _STREAMREQUEST,
   '__module__' : 'helloworld_pb2'
-  # @@protoc_insertion_point(class_scope:helloworld.streamRequest)
+  # @@protoc_insertion_point(class_scope:streamPOC.streamRequest)
   })
 _sym_db.RegisterMessage(streamRequest)
 
-HelloReply = _reflection.GeneratedProtocolMessageType('HelloReply', (_message.Message,), {
-  'DESCRIPTOR' : _HELLOREPLY,
+numberReply = _reflection.GeneratedProtocolMessageType('numberReply', (_message.Message,), {
+  'DESCRIPTOR' : _NUMBERREPLY,
   '__module__' : 'helloworld_pb2'
-  # @@protoc_insertion_point(class_scope:helloworld.HelloReply)
+  # @@protoc_insertion_point(class_scope:streamPOC.numberReply)
   })
-_sym_db.RegisterMessage(HelloReply)
+_sym_db.RegisterMessage(numberReply)
 
 
 
 _GREETER = _descriptor.ServiceDescriptor(
   name='Greeter',
-  full_name='helloworld.Greeter',
+  full_name='streamPOC.Greeter',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   serialized_start=99,
-  serialized_end=178,
+  serialized_end=177,
   methods=[
   _descriptor.MethodDescriptor(
     name='requestData',
-    full_name='helloworld.Greeter.requestData',
+    full_name='streamPOC.Greeter.requestData',
     index=0,
     containing_service=None,
     input_type=_STREAMREQUEST,
-    output_type=_HELLOREPLY,
+    output_type=_NUMBERREPLY,
     serialized_options=None,
   ),
 ])
