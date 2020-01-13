@@ -21,11 +21,11 @@ import logging
 import time
 import grpc
 
-import helloworld_pb2
-import helloworld_pb2_grpc
+import streamPOC_pb2
+import streamPOC_pb2_grpc
 
 
-class Greeter(helloworld_pb2_grpc.GreeterServicer):
+class Greeter(streamPOC_pb2_grpc.GreeterServicer):
 
     def __init__(self):
         # seed random number generator
@@ -40,11 +40,11 @@ class Greeter(helloworld_pb2_grpc.GreeterServicer):
                 x = x + 1
             if x == 1000:
                 x = 0
-            yield helloworld_pb2.numberReply(x=x, y=y)
+            yield streamPOC_pb2.numberReply(x=x, y=y)
 
     def serve():
         server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-        helloworld_pb2_grpc.add_GreeterServicer_to_server(Greeter(), server)
+        streamPOC_pb2_grpc.add_GreeterServicer_to_server(Greeter(), server)
         server.add_insecure_port('[::]:50051')
         server.start()
         server.wait_for_termination()

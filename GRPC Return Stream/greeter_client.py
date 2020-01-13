@@ -18,18 +18,18 @@ import logging
 
 import grpc
 
-import helloworld_pb2
-import helloworld_pb2_grpc
+import streamPOC_pb2
+import streamPOC_pb2_grpc
 
 
 class RpcClient(object):
     def __init__(self):
         self.channel = grpc.insecure_channel('localhost:50051')
-        self.stub = helloworld_pb2_grpc.GreeterStub(self.channel)
-        self.stub = helloworld_pb2_grpc.GreeterStub(self.channel)
+        self.stub = streamPOC_pb2_grpc.GreeterStub(self.channel)
+        self.stub = streamPOC_pb2_grpc.GreeterStub(self.channel)
 
     def say_hi(self):
-        response = self.stub.requestData(helloworld_pb2.streamRequest(name='true'))
+        response = self.stub.requestData(streamPOC_pb2.streamRequest(name='true'))
         for r in response:
             print(r.x, r.y)
         # print(response.message)
