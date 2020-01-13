@@ -4,7 +4,7 @@ import grpc
 import streamPOC_pb2 as streamPOC__pb2
 
 
-class GreeterStub(object):
+class StreamPOCserviceStub(object):
   """The greeting service definition.
   """
 
@@ -15,13 +15,13 @@ class GreeterStub(object):
       channel: A grpc.Channel.
     """
     self.requestData = channel.unary_stream(
-        '/streamPOC.Greeter/requestData',
+        '/streamPOC.StreamPOCservice/requestData',
         request_serializer=streamPOC__pb2.streamRequest.SerializeToString,
         response_deserializer=streamPOC__pb2.numberReply.FromString,
         )
 
 
-class GreeterServicer(object):
+class StreamPOCserviceServicer(object):
   """The greeting service definition.
   """
 
@@ -33,7 +33,7 @@ class GreeterServicer(object):
     raise NotImplementedError('Method not implemented!')
 
 
-def add_GreeterServicer_to_server(servicer, server):
+def add_StreamPOCserviceServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'requestData': grpc.unary_stream_rpc_method_handler(
           servicer.requestData,
@@ -42,5 +42,5 @@ def add_GreeterServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'streamPOC.Greeter', rpc_method_handlers)
+      'streamPOC.StreamPOCservice', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))

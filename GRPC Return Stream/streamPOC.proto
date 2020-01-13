@@ -17,7 +17,7 @@ syntax = "proto3";
 package streamPOC;
 
 // The greeting service definition.
-service Greeter {
+service StreamPOCservice {
   
   rpc requestData (streamRequest) returns (stream numberReply) {}
 }

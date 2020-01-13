@@ -25,7 +25,7 @@ import streamPOC_pb2
 import streamPOC_pb2_grpc
 
 
-class Greeter(streamPOC_pb2_grpc.GreeterServicer):
+class Greeter(streamPOC_pb2_grpc.StreamPOCserviceServicer):
 
     def __init__(self):
         # seed random number generator
@@ -44,7 +44,7 @@ class Greeter(streamPOC_pb2_grpc.GreeterServicer):
 
     def serve():
         server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-        streamPOC_pb2_grpc.add_GreeterServicer_to_server(Greeter(), server)
+        streamPOC_pb2_grpc.add_StreamPOCserviceServicer_to_server(Greeter(), server)
         server.add_insecure_port('[::]:50051')
         server.start()
         server.wait_for_termination()

@@ -25,8 +25,8 @@ import streamPOC_pb2_grpc
 class RpcClient(object):
     def __init__(self):
         self.channel = grpc.insecure_channel('localhost:50051')
-        self.stub = streamPOC_pb2_grpc.GreeterStub(self.channel)
-        self.stub = streamPOC_pb2_grpc.GreeterStub(self.channel)
+        self.stub = streamPOC_pb2_grpc.StreamPOCserviceStub(self.channel)
+        self.stub = streamPOC_pb2_grpc.StreamPOCserviceStub(self.channel)
 
     def say_hi(self):
         response = self.stub.requestData(streamPOC_pb2.streamRequest(name='true'))

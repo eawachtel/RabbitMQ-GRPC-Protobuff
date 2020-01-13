@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='streamPOC',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0fstreamPOC.proto\x12\tstreamPOC\"\x1d\n\rstreamRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"#\n\x0bnumberReply\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x32N\n\x07Greeter\x12\x43\n\x0brequestData\x12\x18.streamPOC.streamRequest\x1a\x16.streamPOC.numberReply\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x0fstreamPOC.proto\x12\tstreamPOC\"\x1d\n\rstreamRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"#\n\x0bnumberReply\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x32W\n\x10StreamPOCservice\x12\x43\n\x0brequestData\x12\x18.streamPOC.streamRequest\x1a\x16.streamPOC.numberReply\"\x00\x30\x01\x62\x06proto3')
 )
 
 
@@ -114,18 +114,18 @@ _sym_db.RegisterMessage(numberReply)
 
 
 
-_GREETER = _descriptor.ServiceDescriptor(
-  name='Greeter',
-  full_name='streamPOC.Greeter',
+_STREAMPOCSERVICE = _descriptor.ServiceDescriptor(
+  name='StreamPOCservice',
+  full_name='streamPOC.StreamPOCservice',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   serialized_start=98,
-  serialized_end=176,
+  serialized_end=185,
   methods=[
   _descriptor.MethodDescriptor(
     name='requestData',
-    full_name='streamPOC.Greeter.requestData',
+    full_name='streamPOC.StreamPOCservice.requestData',
     index=0,
     containing_service=None,
     input_type=_STREAMREQUEST,
@@ -133,8 +133,8 @@ _GREETER = _descriptor.ServiceDescriptor(
     serialized_options=None,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_GREETER)
+_sym_db.RegisterServiceDescriptor(_STREAMPOCSERVICE)
 
-DESCRIPTOR.services_by_name['Greeter'] = _GREETER
+DESCRIPTOR.services_by_name['StreamPOCservice'] = _STREAMPOCSERVICE
 
 # @@protoc_insertion_point(module_scope)
