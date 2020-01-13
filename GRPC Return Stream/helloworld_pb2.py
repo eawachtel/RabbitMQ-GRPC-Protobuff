@@ -20,21 +20,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='helloworld',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x10helloworld.proto\x12\nhelloworld\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\"\n\nHelloReply\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x32K\n\x07Greeter\x12@\n\x08SayHello\x12\x18.helloworld.HelloRequest\x1a\x16.helloworld.HelloReply\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x10helloworld.proto\x12\nhelloworld\"\x1d\n\rstreamRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\"\n\nHelloReply\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x32O\n\x07Greeter\x12\x44\n\x0brequestData\x12\x19.helloworld.streamRequest\x1a\x16.helloworld.HelloReply\"\x00\x30\x01\x62\x06proto3')
 )
 
 
 
 
-_HELLOREQUEST = _descriptor.Descriptor(
-  name='HelloRequest',
-  full_name='helloworld.HelloRequest',
+_STREAMREQUEST = _descriptor.Descriptor(
+  name='streamRequest',
+  full_name='helloworld.streamRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='helloworld.HelloRequest.name', index=0,
+      name='name', full_name='helloworld.streamRequest.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -53,7 +53,7 @@ _HELLOREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=32,
-  serialized_end=60,
+  serialized_end=61,
 )
 
 
@@ -90,20 +90,20 @@ _HELLOREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=62,
-  serialized_end=96,
+  serialized_start=63,
+  serialized_end=97,
 )
 
-DESCRIPTOR.message_types_by_name['HelloRequest'] = _HELLOREQUEST
+DESCRIPTOR.message_types_by_name['streamRequest'] = _STREAMREQUEST
 DESCRIPTOR.message_types_by_name['HelloReply'] = _HELLOREPLY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-HelloRequest = _reflection.GeneratedProtocolMessageType('HelloRequest', (_message.Message,), {
-  'DESCRIPTOR' : _HELLOREQUEST,
+streamRequest = _reflection.GeneratedProtocolMessageType('streamRequest', (_message.Message,), {
+  'DESCRIPTOR' : _STREAMREQUEST,
   '__module__' : 'helloworld_pb2'
-  # @@protoc_insertion_point(class_scope:helloworld.HelloRequest)
+  # @@protoc_insertion_point(class_scope:helloworld.streamRequest)
   })
-_sym_db.RegisterMessage(HelloRequest)
+_sym_db.RegisterMessage(streamRequest)
 
 HelloReply = _reflection.GeneratedProtocolMessageType('HelloReply', (_message.Message,), {
   'DESCRIPTOR' : _HELLOREPLY,
@@ -120,15 +120,15 @@ _GREETER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=98,
-  serialized_end=173,
+  serialized_start=99,
+  serialized_end=178,
   methods=[
   _descriptor.MethodDescriptor(
-    name='SayHello',
-    full_name='helloworld.Greeter.SayHello',
+    name='requestData',
+    full_name='helloworld.Greeter.requestData',
     index=0,
     containing_service=None,
-    input_type=_HELLOREQUEST,
+    input_type=_STREAMREQUEST,
     output_type=_HELLOREPLY,
     serialized_options=None,
   ),

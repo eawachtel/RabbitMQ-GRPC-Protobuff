@@ -14,9 +14,9 @@ class GreeterStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.SayHello = channel.unary_stream(
-        '/helloworld.Greeter/SayHello',
-        request_serializer=helloworld__pb2.HelloRequest.SerializeToString,
+    self.requestData = channel.unary_stream(
+        '/helloworld.Greeter/requestData',
+        request_serializer=helloworld__pb2.streamRequest.SerializeToString,
         response_deserializer=helloworld__pb2.HelloReply.FromString,
         )
 
@@ -25,7 +25,7 @@ class GreeterServicer(object):
   """The greeting service definition.
   """
 
-  def SayHello(self, request, context):
+  def requestData(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -35,9 +35,9 @@ class GreeterServicer(object):
 
 def add_GreeterServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'SayHello': grpc.unary_stream_rpc_method_handler(
-          servicer.SayHello,
-          request_deserializer=helloworld__pb2.HelloRequest.FromString,
+      'requestData': grpc.unary_stream_rpc_method_handler(
+          servicer.requestData,
+          request_deserializer=helloworld__pb2.streamRequest.FromString,
           response_serializer=helloworld__pb2.HelloReply.SerializeToString,
       ),
   }

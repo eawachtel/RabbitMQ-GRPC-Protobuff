@@ -31,7 +31,7 @@ class Greeter(helloworld_pb2_grpc.GreeterServicer):
         # seed random number generator
         seed(1)
 
-    def SayHello(self, request, context):
+    def requestData(self, request, context):
         x = 0
         while request.name == 'true':
             y = randint(1, 10)

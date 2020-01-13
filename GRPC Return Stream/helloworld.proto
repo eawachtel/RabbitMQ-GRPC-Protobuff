@@ -19,11 +19,11 @@ package helloworld;
 // The greeting service definition.
 service Greeter {
   
-  rpc SayHello (HelloRequest) returns (stream HelloReply) {}
+  rpc requestData (streamRequest) returns (stream HelloReply) {}
 }
 
 // The request message containing the user's name.
-message HelloRequest {
+message streamRequest {
   string name = 1;
 }
 
